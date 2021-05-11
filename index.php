@@ -21,9 +21,6 @@
 </head>
 <body>
     <?php
-        // $authors=array();
-        // $publ=array();
-        // $years=array();
 
         $managers = array();
         $projects = array();
@@ -31,21 +28,9 @@
         while($document=$list->getNext()){
             array_push($managers, $document["manager"]);
             array_push($projects, $document["projectName"]);
-            // array_push($years, $document["year"]);
-            // if(isset($document["author"])){
-            //     if(is_array($document["author"])){
-            //         for($i=0;$i<count($document["author"]);$i++){
-            //             array_push($authors,$document["author"][$i]);
-            //         }
-            //     }
-            //     else{
-            //         array_push($authors,$document["author"]);
-            //     }
-            // }
+
         }
     
-        // $managers=array_unique($managers);
-        // $projects=array_unique($projects);
         $managers2 = array();
         for($i=0;$i<count($managers);$i++){
             if(!in_array($managers[$i],$managers2)){
